@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+class employee{
+    private:
+    double id, basic, ta, da;
+    string name;
+    public:
+    void getdata(){
+        cout << "Enter Employee ID: ";
+        cin >> id;
+        cout << "Enter Employee Name: ";
+        cin >> name;
+        cout << "Enter Basic Salary: ";
+        cin >> basic;
+    }
+    void salary(){
+        da = (52*basic)/100;
+        ta = 30*(basic+da)/100;
+        cout<<"Net salary of Employee is :"<<basic+da+ta<<endl;
+    }
+};
+
+int main()
+{
+    int N;
+    cout<<"enter number of Employee :";
+    cin>>N;
+    employee *emp = new employee[N];
+    for(int i=0;i<N;i++){
+        emp[i].getdata();
+        emp[i].salary();
+    }
+        
+
+    return 0;
+}
